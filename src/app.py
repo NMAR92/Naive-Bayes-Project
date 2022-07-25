@@ -1,5 +1,18 @@
-from utils import db_connect
-engine = db_connect()
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.feature_extraction.text import TfidfTransformer
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.naive_bayes import MultinomialNB
+from sklearn.pipeline import Pipeline
+from sklearn import metrics
+from sklearn.metrics import precision_recall_fscore_support
+from sklearn.metrics import confusion_matrix
+from sklearn.model_selection import RandomizedSearchCV
+from sklearn.metrics import classification_report
+import pickle
 
 #0.
 df_raw = pd.read_csv('https://raw.githubusercontent.com/4GeeksAcademy/naive-bayes-project-tutorial/main/playstore_reviews_dataset.csv')
